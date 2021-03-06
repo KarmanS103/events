@@ -1,0 +1,31 @@
+<h1>Listing Events</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for evnt <- @evnts do %>
+        <tr>
+          <td><%= evnt.name %></td>
+          <td><%= evnt.date %></td>
+          <td><%= evnt.description %></td>
+
+          <td>
+            <span><%= link "Show", to: Routes.evnt_path(@conn, :show, evnt) %></span>
+            <span><%= link "Edit", to: Routes.evnt_path(@conn, :edit, evnt) %></span>
+            <span><%= link "Delete", to: Routes.evnt_path(@conn, :delete, evnt), method: :delete, data: [confirm: "Are you sure?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Event", to: Routes.evnt_path(@conn, :new) %></span>
