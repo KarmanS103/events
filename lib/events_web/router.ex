@@ -21,8 +21,10 @@ defmodule EventsWeb.Router do
     # Attribution Nat Tuck's Lecture 11 Code
     resources "/evnts", EvntController
     resources "/users", UserController
+    resources "/comments", CommentController
     resources "/sessions", SessionController, 
       only: [:create, :delete], singleton: true
+
   end
 
   # Other scopes may use custom stacks.
