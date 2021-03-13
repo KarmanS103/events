@@ -26,6 +26,7 @@ if [ ! -e "$CFGD/db_pass" ]; then
     pwgen 12 1 > "$CFGD/db_pass"
 fi
 
+echo $CFGD/db_pass
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
