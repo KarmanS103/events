@@ -6,6 +6,8 @@ defmodule Events.Evnts.Evnt do
     field :date, :string
     field :description, :string
     field :name, :string
+    belongs_to :user, Events.Users.User
+    has_many :comments, Events.Comments.Comment
 
     timestamps()
   end

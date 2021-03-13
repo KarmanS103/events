@@ -5,6 +5,8 @@ defmodule Events.Users.User do
   schema "users" do
     field :email, :string
     field :name, :string
+    field :photo_hash, :string
+    has_many :comments, Events.Comments.Comment
 
     timestamps()
   end
